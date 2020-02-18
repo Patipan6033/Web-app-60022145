@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ลงทะเบียน</title>
-    <link href="Gepub.css" rel="stylesheet" type="text/css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>ลงทะเบียน</title>
+<link href="test.css" rel="stylesheet" type="text/css"/>
+
+
 </head>
-<body>
-    
-<div class="user">
-    <header class="user__header">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
-        <h1 class="user__title">**กรุณากรอกข้อมูลเพื่อทำการลงทะเบียน</h1>
-    </header>
-
-    <form class="form">
-        <div class="form__group">
-            <input type="text" placeholder="ชื่อ-สกุล" class="form__input"  />
-        </div>
-
-        <div class="form__group">
-            <input type="email" placeholder="Email" class="form__input" />
-        </div>
-
-        <div class="form__group">
-            <select name="sl"class="form__input" placeholder="เพศ" id="sex" >
-              <option value="ชาย">ชาย</option>
-              <option value="หญิง">หญิง</option>
-            </select>
-        </div>
-        <div class="form__group">
-          <input type="text" placeholder="เบอร์โทรศัพท์" class="form__input" />
-        </div>
-        <div class="form__group">
-          <input type="text" placeholder="เลขบัตรประชาชน" class="form__input" />
-        </div>
+<body >
+  <div id="form-main">
+    <div id="form-div">
+        
+      <form class="form" id="form1">
+        <p class="regis" style="font-size: 40px; color: white; margin-left: 145px; margin-top: 10px;">Register</p>
+        
+        <p class="name">
+          <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="ชื่อ-นามสกุล" id="name" />
+        </p>
+        
+        <p class="email">
+          <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+        </p>
+        <p class="idcard">
+            <input name="idcard" type="text" class="validate[required,custom[email]] feedback-input" id="idcard" placeholder="เลขบัตรประชาชน" />
+          </p>
+          <p class="idline">
+            <input name="idline" type="text" class="validate[required,custom[email]] feedback-input" id="idline" placeholder="LineID" />
+          </p>
+          <p class="Phone">
+            <input name="Phone" type="text" class="validate[required,custom[email]] feedback-input" id="Phone" placeholder="เบอร์โทรศัพท์" />
+          </p>
+          <p class="lip">
+            <input name="lip" type="text" class="validate[required,custom[email]] feedback-input" id="lip" placeholder="เลขทะเบียนรถยนต์" />
+          </p>
+          <p class="lip01">
+            <input name="lip01" type="text" class="validate[required,custom[email]] feedback-input" id="lip01" placeholder="จังหวัดทะเบียน" />
+          </p>
+          <br>
+        
 
         
-        <input  class="btn" type="submit" value="ลงทะเบียน">
-    </form>
-</div>
-
-</body>
+     
+        
+        
+        <div class="submit">
+          <input type="submit" value="ลงทะเบียน" id="button-blue"/>
+          <div class="ease"></div>  
+        </div><br><br>
+        <div class="submit">
+            <input type="button" value="ยกเลิก" id="button-blue" class="out"/>
+            <div class="ease"></div>  
+          </div>
+        
+      </form>
+    </div>
+   </body>
 </html>
