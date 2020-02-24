@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>ลงทะเบียน</title>
-<link href="test.css" rel="stylesheet" type="text/css"/>
+<link href="h2.css" rel="stylesheet" type="text/css"/>
 
 
 </head>
@@ -23,11 +23,17 @@
         <p class="email">
           <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
         </p>
-        <select name="status" id="status" class="validate[required,custom[email]] feedback-input" >
-            <option > เลือกสถานะ </option>
-            <option > นิสิต</option>
-            <option > บุคลากร</option>
-        </select>
+        
+        <p class="stu" style="margin-left: 100px; margin-top: -7px; font-size: 20px; color: white;">
+          
+          <input name="stu" type="radio" class="select"/> 
+          <label style="margin-left: 10px;">นิสิต</label>
+          <input name="Emplo" type="radio" class="select" style="margin-left: 50px;"/> 
+          <label style="margin-left: 10px;">บุคคลกร</label>
+        </p>
+       
+        
+        
         <p class="idcard">
             <input name="idcard" type="text" class="validate[required,custom[idcard]] feedback-input" id="idcard" placeholder="เลขบัตรประชาชน" />
           </p>
