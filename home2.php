@@ -21,7 +21,7 @@
       <form class="form" id="form1">
         
         <div class="submit">
-            <a href="re_per.php"><input type="button" value="บุคลากรในมหาวิทยาลัย" id="button-blue"/></a>
+            <a href="login.php"><input type="button" value="บุคลากรในมหาวิทยาลัย" id="button-blue"/></a>
           <div class="ease"></div>  
         </div><br><br>
         <div class="submit">

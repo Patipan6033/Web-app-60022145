@@ -19,7 +19,7 @@ $pro = $_REQUEST['pro'];
 
 $sql = "INSERT INTO regepub (licenseplate,name,email,idcard,lineaccount,phone,province) 
                          VALUE('$lip', '$Name', '$Email', '$idcard', '$idline', '$Phone', '$pro ')";
-echo $sql;
+// echo $sql;
 
 //$sql .="('". $status_th ."','" . $status_en ."')";
 //$sql .="(".$status_id .",'" . $status_th ."','" . $status_en ."')";
@@ -30,7 +30,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-//header("Location:re_Gepub.php"); 
+header("Location:re_Gepub.php"); 
 
 
 

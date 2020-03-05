@@ -4,6 +4,9 @@ html{
     height: 100%;
     
 }
+.regis{
+    color: violet;
+}
 
 
 #feedback-page{
@@ -67,14 +70,14 @@ html{
 
 /* Icons ---------------------------------- */
 #name{
-	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+	background-image: url('man.png');
 	background-size: 30px 30px;
 	background-position: 11px 8px;
 	background-repeat: no-repeat;
 }
 
 #name:focus{
-	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+	background-image: url('man.png');
 	background-size: 30px 30px;
 	background-position: 8px 5px;
   background-position: 11px 8px;
@@ -82,22 +85,83 @@ html{
 }
 
 #email{
-	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+	background-image: url('8.svg');
 	background-size: 30px 30px;
 	background-position: 11px 8px;
 	background-repeat: no-repeat;
 }
 
 #email:focus{
-	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+	background-image: url('8.svg');
 	background-size: 30px 30px;
   background-position: 11px 8px;
 	background-repeat: no-repeat;
 }
+#idcard{
+	background-image: url('6.svg');
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
 
+#idcard:focus{
+	background-image: url('6.svg');
+	background-size: 30px 30px;
+  background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+#idline{
+	background-image: url('7.svg');
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
 
+#idline:focus{
+	background-image: url('7.svg');
+	background-size: 30px 30px;
+  background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+#Phone{
+	background-image: url('9.svg');
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
 
+#Phone:focus{
+	background-image: url('9.svg');
+	background-size: 30px 30px;
+  background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+#lip{
+	background-image: url('10.svg');
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
 
+#lip:focus{
+	background-image: url('10.svg');
+	background-size: 30px 30px;
+  background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+#pro{
+	background-image: url('10.svg');
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#pro:focus{
+	background-image: url('10.svg');
+	background-size: 30px 30px;
+  background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
 
 
 #button-blue{

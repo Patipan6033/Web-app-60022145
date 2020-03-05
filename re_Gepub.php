@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>ลงทะเบียน</title>
-<link href="h3.css" rel="stylesheet" type="text/css"/>
+<link href="h1.css" rel="stylesheet" type="text/css"/>
 <script>
         function validateForm() {
         var x = document.forms["myForm"]["name"].value;
@@ -32,7 +32,7 @@
         
     <form class="form" id="form1"  name = "myForm" action="add_gepub.php" method ="GETS"  onsubmit="return validateForm()" >
         <p class="regis" style="font-size: 34px; color: white; margin-left: 17px; margin-top: 10px;">ลงทะเบียนสำหรับบุคคลทั่วไป</p>
-        <p class="regis" style="font-size: 15px; color: white; margin-left: 0px; margin-top: 10px;">**หมายเหตุ: กรุณากรอกให้ครบทุกช่อง</p>
+        <p class="regis" style="font-size: 15px; margin-left: 0px; margin-top: 10px;">**หมายเหตุ: กรุณากรอกให้ครบทุกช่อง</p>
         
         <p class="name">
           <input name="name" type="text" class=" feedback-input" placeholder="ชื่อ-นามสกุล" id="name" />

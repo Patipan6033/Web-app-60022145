@@ -1,0 +1,146 @@
+html{
+    background-image:url('4.jpg');
+    height: 100%;
+    width: 100%;
+    
+}
+.img1{
+    margin-left: 600px;
+    margin-top: 50px;
+    
+  }
+.img2{
+    margin-left: 720px;
+    margin-top: -140px;
+
+}
+  #label{
+    background-color:  rgba(72,72,72,0.3);
+	padding-left:35px;
+	padding-right:35px;
+	padding-top:35px;
+    padding-bottom:50px;
+    height: 200px;
+    
+}
+  p {
+    margin-left: 660px;
+    margin-top: -120px;
+    font-size: 40px;
+    padding: 8% 0 0;
+    color: yellow;
+    
+
+} 
+#p1{
+    margin-left: 142px;
+    margin-top: -50px;
+    font-size: 30px;
+    padding: 8% 0 0;
+    color: whitesmoke;
+}
+.in2{
+    margin-top: 20px;
+}
+  #form-main{
+	width:100%;
+	float:left;
+	padding-top:0px;
+}
+  #form-div {
+	background-color: rgba(72,72,72,0.4);
+	padding-left:35px;
+	padding-right:35px;
+	padding-top:35px;
+	padding-bottom:50px;
+	width: 450px;
+	float: left;
+	left: 50%;
+	position: absolute;
+  margin-top:30px;
+	margin-left: -260px;
+
+ 
+}
+input{
+    display: block;
+    appearance: none;
+    outline: 0;
+    border: white solid 1px;
+    background-color: rgba(243, 241, 241, 0.4);
+    width: 250px;
+    
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    /* display: block; */
+    text-align: center;
+    font-size: 18px;
+    
+    color: white;
+    
+    transition-duration: 0.25s;
+    font-weight: 300;
+}
+    input:hover{
+        background-color: fade(white, 40%);
+        color: white;
+        
+    }
+    
+    input:focus{
+        background-color: white;
+        width: 300px;
+        color: black;
+        border: black solid 1px
+      
+    }
+
+
+    #login-button{
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        float:left;
+        width: 300px;
+        height: 75px;
+        border: #fbfbfb solid 4px;
+        cursor:pointer;
+        background-color:  rgba(0,255,0,0.5);
+        color:white;
+        font-size:24px;
+        padding-top:22px;
+        padding-bottom:22px;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+      margin-top:20px;
+      margin-left: 75px;
+      font-weight:700;
+    }
+    
+    #login-button:hover{
+        background-color: rgba(72,72,72,0.4);
+        color: rgba(0,255,0,0.9);
+    }
+        
+    .submit:hover {
+        color: #3498db;
+        
+    }
+        
+    .ease {
+        width: 0px;
+        height: 74px;
+        background-color: #fbfbfb;
+        -webkit-transition: .3s ease;
+        -moz-transition: .3s ease;
+        -o-transition: .3s ease;
+        -ms-transition: .3s ease;
+        transition: .3s ease;
+    }
+    .submit:hover .ease{
+       
+        margin-top:20px;
+        margin-left: 100px;
+        
+     
+    }
