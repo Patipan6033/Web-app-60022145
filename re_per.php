@@ -1,3 +1,11 @@
+<?php   
+
+session_start();
+//if(isset($_SESSION['user']) == null){
+ if($_SESSION['Username'] == null){
+   header("Location:login.php");
+ }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,19 +14,57 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>ลงทะเบียน</title>
 <link href="h1.css" rel="stylesheet" type="text/css"/>
-<script>
+<script> 
         function validateForm() {
-        var x = document.forms["myForm"]["name"].value;
-        var y = document.forms["myForm"]["email"].value;
-        if (x == "" || x == null) {
-            alert("status Thai must be filled out");
+        var a = document.forms["Form"]["name"].value;
+        var b = document.forms["Form"]["email"].value;
+        var c = document.forms["Form"]["idcard"].value;
+        var d = document.forms["Form"]["idline"].value;
+        var e = document.forms["Form"]["Phone"].value;
+        var f = document.forms["Form"]["lip"].value;
+        var g = document.forms["Form"]["pro"].value;
+        var h = document.forms["Form"]["status"].value;
+
+        if (a == "" || a == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
             document.getElementById("name").focus();
             return false;         
         }
         
-        if (y == "" || y == null) {
-            alert("Name must be filled out");
+        if (b == "" || b == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
             document.getElementById("email").focus();
+            return false;
+            }
+        if (c == "" || c == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้t");
+            document.getElementById("idcard").focus();
+            return false;         
+        }
+        
+        if (d == "" || d == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
+            document.getElementById("idline").focus();
+            return false;
+            }
+        if (e == "" || e == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
+            document.getElementById("Phone").focus();
+            return false;
+            }
+         if (f == "" || f == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
+            document.getElementById("lip").focus();
+            return false;
+            }
+         if (g == "" || g == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
+            document.getElementById("pro").focus();
+            return false;
+            }
+          if (h == "" || h == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
+            document.getElementById("status").focus();
             return false;
             }
     }
@@ -31,7 +77,7 @@
   <div id="form-main">
     <div id="form-div">
         
-      <form class="form" id="form1"  name = "myForm" action="add_per.php" method ="GETS"  onsubmit="return validateForm()" required>
+      <form class="form" id="form1"  name = "Form" action="add_per.php" method ="GETS"  onsubmit="return validateForm()">
         <p class="regis" style="font-size: 35px; color: white ; margin-left: 30px; margin-top: 10px;">ลงทะเบียนสำหรับบุคลากร</p>
         <p class="regis" style="font-size: 15px; margin-left: 0px; margin-top: 10px;">**หมายเหตุ: กรุณากรอกให้ครบทุกช่อง</p>
         
@@ -72,12 +118,15 @@
           <input type="submit" value="ลงทะเบียน" id="button-blue"/>
           <div class="ease"></div>  
         </div><br><br>
-        <div class="submit">
-        <a href="home2.php"><input type="button" value="ยกเลิก" id="button-blue" class="out"/></a>
-            <div class="ease"></div>  
-          </div>
+      
         
       </form>
+      <form action="out.php" >
+        <div class="submit">
+        <a href="login.php"><input type="submit"  value="ยกเลิก" id="button-blue" class="out"/></a>
+            <div class="ease"></div>  
+          </div>
+        </form>
     </div>
    </body>
 </html>

@@ -113,11 +113,11 @@ img{
 
 #button-blue:hover{
 	background-color: rgba(0,0,0,0);
-	color: #0493bd;
+	color: black;
 }
 	
 .submit:hover {
-	color: #3498db;
+	color: black;
 }
 	
 .ease {

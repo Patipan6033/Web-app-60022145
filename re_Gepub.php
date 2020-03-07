@@ -8,17 +8,48 @@
 <link href="h1.css" rel="stylesheet" type="text/css"/>
 <script>
         function validateForm() {
-        var x = document.forms["myForm"]["name"].value;
-        var y = document.forms["myForm"]["email"].value;
-        if (x == "" || x == null) {
-            alert("status Thai must be filled out");
-            document.getElementById("status_TH").focus();
+        var a = document.forms["Form"]["name"].value;
+        var b = document.forms["Form"]["email"].value;
+        var c = document.forms["Form"]["idcard"].value;
+        var d = document.forms["Form"]["idline"].value;
+        var e = document.forms["Form"]["Phone"].value;
+        var f = document.forms["Form"]["lip"].value;
+        var g = document.forms["Form"]["pro"].value;
+        if (a == "" || a == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
+            document.getElementById("name").focus();
             return false;         
         }
         
-        if (y == "" || y == null) {
-            alert("Name must be filled out");
-            document.getElementById("status_ENG").focus();
+        if (b == "" || b == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
+            document.getElementById("email").focus();
+            return false;
+            }
+        if (c == "" || c == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้t");
+            document.getElementById("idcard").focus();
+            return false;         
+        }
+        
+        if (d == "" || d == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
+            document.getElementById("idline").focus();
+            return false;
+            }
+        if (e == "" || e == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
+            document.getElementById("Phone").focus();
+            return false;
+            }
+         if (f == "" || f == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
+            document.getElementById("lip").focus();
+            return false;
+            }
+         if (g == "" || g == null) {
+            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
+            document.getElementById("pro").focus();
             return false;
             }
     }
@@ -30,7 +61,7 @@
   <div id="form-main">
     <div id="form-div">
         
-    <form class="form" id="form1"  name = "myForm" action="add_gepub.php" method ="GETS"  onsubmit="return validateForm()" >
+    <form class="form" id="form1"  name = "Form" action="add_gepub.php" method ="GETS"  onsubmit="return validateForm()" >
         <p class="regis" style="font-size: 34px; color: white; margin-left: 17px; margin-top: 10px;">ลงทะเบียนสำหรับบุคคลทั่วไป</p>
         <p class="regis" style="font-size: 15px; margin-left: 0px; margin-top: 10px;">**หมายเหตุ: กรุณากรอกให้ครบทุกช่อง</p>
         

@@ -13,6 +13,24 @@ session_start();
 <title>ลงทะเบียน</title>
 <link href="login.css" rel="stylesheet" type="text/css"/>
 
+<script>
+        function ChackForm() {
+        var x = document.forms["Form"]["Username"].value;
+        var y = document.forms["Form"]["Password"].value;
+        if (x == "" || x == null) {
+            alert("กรุณากรอก Username และ Password  ");
+            document.getElementById("Username").focus();
+            return false;         
+        }
+        
+        if (y == "" || y == null) {
+            alert("กรุณากรอก Username และ Password ");
+            document.getElementById("Password").focus();
+            return false;
+            }
+    }
+
+    </script>
 
 </head>
 <body >
@@ -25,7 +43,7 @@ session_start();
   <div id="form-main">
     <div id="form-div">
     <p id = "p1">PERSONNEL</p>
-    <form class="form" action="Chacklogin.php">
+    <form class="form" name = "Form" action="Chacklogin.php"  onsubmit="return ChackForm()" >
 			<input type="text" name = "Username" placeholder="Username" id = "input" class="in1 " style="color: black;" >
             <input type="password" name = "Password" placeholder="Password" id = "input" class="in2" >
             <div class="submit">
