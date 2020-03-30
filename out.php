@@ -3,5 +3,5 @@
 session_start();
 
 session_destroy();
-header("Location:home2.php");
+header("Location:login.php");
 ?>
