@@ -1,10 +1,80 @@
 <?php   
 
 session_start();
-//if(isset($_SESSION['user']) == null){
- if($_SESSION['Username'] == null){
+
+ if($_SESSION['Password']  == null){
    header("Location:login.php");
+
+   
  }
+ require("connect.php");
+
+//  $user = $_SESSION['Username'];
+//  $pass = $_SESSION['Password'];
+    
+    $status = $_SESSION['status'];
+    $id = $_SESSION['username'] ;
+    $pass =$_SESSION['password'];
+    
+ 
+ 
+ 
+ if($status == 'นิสิต'){
+  $sql = "SELECT * FROM datastu WHERE idstu ='$id' AND Password = '$pass'";
+//  INNER JOIN stu ON datastu.idstu = stu.ID
+ 
+ 
+ $result = mysqli_query($conn, $sql);
+ 
+ 
+                         if (mysqli_num_rows($result) == 1) { 
+                             $row = mysqli_fetch_assoc($result);
+                             $_SESSION['status'] =   $row['status'];
+                             $_SESSION['id'] =   $row['idstu'];
+                             
+                             $_SESSION['email'] =   $row['email'];
+                             $_SESSION['phone'] =   $row['phone'];
+                             echo "เสร็จ";
+ 
+ 
+                           
+                         }
+                         else{
+                          echo "ผิด";
+
+                            //  header("Location:login.php");
+ 
+ 
+                         }
+ 
+   }
+ elseif($status == 'บุคลากร'){
+    
+  $sql = "SELECT * FROM dataper WHERE idper ='$id' AND Password = '$pass'";
+
+$result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) == 1) { 
+                            $row = mysqli_fetch_assoc($result);
+                            $_SESSION['status'] =   $row['status'];
+                            $_SESSION['id'] =   $row['idper'];
+                            $_SESSION['name'] =   $row['name'];
+                            $_SESSION['email'] =   $row['email'];
+                            $_SESSION['phone'] =   $row['phone'];
+          
+                        }
+                        else{
+                            header("Location:login.php");
+
+                        }
+
+}
+else {
+    header("Location:login.php");
+}
+     
+ 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,109 +83,55 @@ session_start();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>ลงทะเบียน</title>
-<link href="h1.css" rel="stylesheet" type="text/css"/>
-<script> 
-        function validateForm() {
-        var a = document.forms["Form"]["name"].value;
-        var b = document.forms["Form"]["email"].value;
-        var c = document.forms["Form"]["idcard"].value;
-        var d = document.forms["Form"]["idline"].value;
-        var e = document.forms["Form"]["Phone"].value;
-        var f = document.forms["Form"]["lip"].value;
-        var g = document.forms["Form"]["pro"].value;
-        var h = document.forms["Form"]["status"].value;
-
-        if (a == "" || a == null) {
-            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
-            document.getElementById("name").focus();
-            return false;         
-        }
-        
-        if (b == "" || b == null) {
-            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
-            document.getElementById("email").focus();
-            return false;
-            }
-        if (c == "" || c == null) {
-            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้t");
-            document.getElementById("idcard").focus();
-            return false;         
-        }
-        
-        if (d == "" || d == null) {
-            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
-            document.getElementById("idline").focus();
-            return false;
-            }
-        if (e == "" || e == null) {
-            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
-            document.getElementById("Phone").focus();
-            return false;
-            }
-         if (f == "" || f == null) {
-            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
-            document.getElementById("lip").focus();
-            return false;
-            }
-         if (g == "" || g == null) {
-            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
-            document.getElementById("pro").focus();
-            return false;
-            }
-          if (h == "" || h == null) {
-            alert("กรุณากรอกข้อมูลให้ครบตามที่กำหนดไว้");
-            document.getElementById("status").focus();
-            return false;
-            }
-    }
-
-    </script>
-
-
+<link href="h3.css" rel="stylesheet" type="text/css"/>
 </head>
 <body >
   <div id="form-main">
     <div id="form-div">
         
-      <form class="form" id="form1"  name = "Form" action="add_per.php" method ="GETS"  onsubmit="return validateForm()">
+      <form class="form" id="form1"  name = "Form" action="add_data.php" method ="GETS" >
         <p class="regis" style="font-size: 35px; color: white ; margin-left: 30px; margin-top: 10px;">ลงทะเบียนสำหรับบุคลากร</p>
         <p class="regis" style="font-size: 15px; margin-left: 0px; margin-top: 10px;">**หมายเหตุ: กรุณากรอกให้ครบทุกช่อง</p>
         
         <p class="name">
-          <input name="name" type="text" class="feedback-input" placeholder="ชื่อ-นามสกุล" id="name" />
+          <input name="name" type="text" class="feedback-input"  id="name" value="<?php echo $_SESSION['name'];?>" readonly/>
         </p>
         
+        <p class="name">
+          <input name="status" type="text" class="feedback-input" id="name" value="<?php echo $_SESSION['status'];?>" readonly/>
+        </p>
         <p class="email">
-          <input name="email" type="text" class=" feedback-input" id="email" placeholder="Email" />
+          <input name="email" type="email" class=" feedback-input" id="email" value="<?php echo $_SESSION['email'];?>" readonly/>
         </p>
-        
-        <p class="stu" style="margin-left: 100px; margin-top: -7px; font-size: 20px; color: white;">
-          
-          <input name="status" type="radio" class="select"  value="นิสิต"/> 
-          <label style="margin-left: 10px;">นิสิต</label>
-          <input name="status" type="radio" class="select" style="margin-left: 50px;" value="บุคคลกร"/> 
-          <label style="margin-left: 10px;">บุคคลกร</label>
-        </p>
-       
+      
+
         <p class="idcard">
-            <input name="idcard" type="text" class=" feedback-input" id="idcard" placeholder="เลขบัตรประชาชน" />
+            <input name="idcard" type="text" class=" feedback-input" id="idcard" value="<?php echo $_SESSION['id'];?>" readonly/>
           </p>
           <p class="idline">
-            <input name="idline" type="text" class=" feedback-input" id="idline" placeholder="LineID" />
+            <input name="idline" type="text" class=" feedback-input" id="idline" placeholder="LineID" required/>
           </p>
           <p class="Phone">
-            <input name="Phone" type="text" class=" feedback-input" id="Phone" placeholder="เบอร์โทรศัพท์" />
+            <input name="Phone" type="text" class=" feedback-input" id="Phone" value="<?php echo $_SESSION['phone'];?>" pattern="[0-9]{10}" title="กรอกเลขเบอร์โทรศัพท์เป็นตัวเลข 10 หลัก" readonly/>
           </p>
           <p class="lip">
-            <input name="lip" type="text" class=" feedback-input" id="lip" placeholder="เลขทะเบียนรถยนต์" />
+            <input name="lip" type="text" class=" feedback-input" id="lip" placeholder="เลขทะเบียนรถยนต์" required/>
           </p>
           <p class="pro">
-            <input name="pro" type="text" class=" feedback-input" id="pro" placeholder="จังหวัดทะเบียน" />
+            <input name="pro" type="text" class=" feedback-input" id="pro" placeholder="จังหวัดทะเบียน" required/>
           </p>
+          <p class="img1"> อัพโหลดรูปภาพสมุดทะเบียนรถ  </p>
+
+<p class="img2">
+  <input name="img" type="file" class="feedback-input" id="img" placeholder="จังหวัดทะเบียน" pattern="{1,30}" title="อัพโหลดรูปภาพ พ.ร.บ ของผู้ลงทะเบียน" />
+</p>
+<p style="color:white; margin-top:-25px;">**ให้เห็นหลักฐานในการเป็นเจ้าของ</p>
+<br>
+
           <br>
         
         <div class="submit">
-          <input type="submit" value="ลงทะเบียน" id="button-blue"/>
+          <input type="submit" value="ลงทะเบียน" id="button-blue" name="btnper"/>
           <div class="ease"></div>  
         </div><br><br>
       

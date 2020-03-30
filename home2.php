@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>ลงทะเบียน</title>
-<link href="home3.css" rel="stylesheet" type="text/css"/>
+<link href="home2.css" rel="stylesheet" type="text/css"/>
 
 
 </head>
@@ -30,6 +30,7 @@
           </div>
         
       </form>
+      
     </div>
    </body>
 </html>

@@ -1,7 +1,11 @@
 
 html{
     background-image:url('5.jpg');
-    height: 100%;
+	height: 100vh;
+    width: 100vw;
+	background-size: cover;
+	background-repeat: repeat;
+	
     
 }
 .regis{
@@ -11,6 +15,13 @@ html{
 
 #feedback-page{
 	text-align:center;
+}
+.img1{
+	color: white;
+	font-size: 18px;
+	border-style: double;
+	text-align: center;
+
 }
 
 #form-main{
@@ -158,6 +169,19 @@ html{
 
 #pro:focus{
 	background-image: url('10.svg');
+	background-size: 30px 30px;
+  background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+#img{
+	background-image: url('14.svg');
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#img:focus{
+	background-image: url('14.svg');
 	background-size: 30px 30px;
   background-position: 11px 8px;
 	background-repeat: no-repeat;

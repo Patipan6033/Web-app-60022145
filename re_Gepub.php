@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>ลงทะเบียน</title>
-<link href="h1.css" rel="stylesheet" type="text/css"/>
-<script>
+<link href="h3.css" rel="stylesheet" type="text/css"/>
+<!-- <script>
         function validateForm() {
         var a = document.forms["Form"]["name"].value;
         var b = document.forms["Form"]["email"].value;
@@ -54,56 +54,58 @@
             }
     }
 
-    </script>
+    </script> -->
 
 </head>
 <body >
   <div id="form-main">
     <div id="form-div">
         
-    <form class="form" id="form1"  name = "Form" action="add_gepub.php" method ="GETS"  onsubmit="return validateForm()" >
+    <form class="form" id="form1"  name = "Form" action="add_gepub.php"  >
         <p class="regis" style="font-size: 34px; color: white; margin-left: 17px; margin-top: 10px;">ลงทะเบียนสำหรับบุคคลทั่วไป</p>
         <p class="regis" style="font-size: 15px; margin-left: 0px; margin-top: 10px;">**หมายเหตุ: กรุณากรอกให้ครบทุกช่อง</p>
         
         <p class="name">
-          <input name="name" type="text" class=" feedback-input" placeholder="ชื่อ-นามสกุล" id="name" />
+          <input name="name" type="text" class=" feedback-input" placeholder="ชื่อ-นามสกุล" id="name" required/>
         </p>
         
         <p class="email">
-          <input name="email" type="text" class=" feedback-input" id="email" placeholder="Email" />
+          <input name="email" type="email" class=" feedback-input" id="email" placeholder="Email" required/>
         </p>
         <p class="idcard">
-            <input name="idcard" type="text" class="feedback-input" id="idcard" placeholder="เลขบัตรประชาชน" />
+            <input name="idcard" type="text" class="feedback-input" id="idcard" placeholder="เลขบัตรประชาชน" pattern="[0-9]{13}" title="กรอกเลขบัตรประชาชนเป็นตัวเลข 13 หลัก" required/>
           </p>
           <p class="idline">
-            <input name="idline" type="text" class=" feedback-input" id="idline" placeholder="LineID" />
+            <input name="idline" type="text" class=" feedback-input" id="idline" placeholder="LineID" required/>
           </p>
           <p class="Phone">
-            <input name="Phone" type="text" class=" feedback-input" id="Phone" placeholder="เบอร์โทรศัพท์" />
+            <input name="Phone" type="text" class=" feedback-input" id="Phone" placeholder="เบอร์โทรศัพท์"  pattern="[0-9]{10}" title="กรอกเลขเบอร์โทรศัพท์เป็นตัวเลข 10 หลัก" required/>
           </p>
           <p class="lip">
-            <input name="lip" type="text" class=" feedback-input" id="lip" placeholder="เลขทะเบียนรถยนต์" />
+            <input name="lip" type="text" class=" feedback-input" id="lip" placeholder="เลขทะเบียนรถยนต์" required/>
           </p>
           <p class="pro">
-            <input name="pro" type="text" class="feedback-input" id="pro" placeholder="จังหวัดทะเบียน" />
+            <input name="pro" type="text" class="feedback-input" id="pro" placeholder="จังหวัดทะเบียน" pattern="{1,30}" title="กรุณากรอกชื่อจังหวัดให้ถูกต้อง" required/>
           </p>
+          <p class="img1"> อัพโหลดรูปภาพสมุดทะเบียนรถ  </p>
+
+          <p class="img2">
+            <input name="img" type="file" class="feedback-input" id="img" placeholder="จังหวัดทะเบียน" pattern="{1,30}" title="อัพโหลดรูปภาพ พ.ร.บ ของผู้ลงทะเบียน" />
+          </p>
+          <p style="color:white;">**ให้เห็นหลักฐานในการเป็นเจ้าของ</p>
           <br>
         
-
-        
-     
-        
-        
         <div class="submit">
-          <input type="submit" value="ลงทะเบียน" id="button-blue"/>
+          <input type="submit" value="ลงทะเบียน" id="button-blue" name="btnpub"/>
           <div class="ease"></div>  
-        </div><br><br>
+        </div>
+        
+      </form>
+      <br><br>
         <div class="submit">
         <a href="home2.php"><input type="button" value="ยกเลิก" id="button-blue" class="out"/></a>
             <div class="ease"></div>  
           </div>
-        
-      </form>
     </div>
    </body>
 </html>
